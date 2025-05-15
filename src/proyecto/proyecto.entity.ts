@@ -1,4 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { EstudianteEntity } from "src/estudiante/estudiante.entity";
+import { ProfesorEntity } from "../profesor/profesor.entity";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { EvaluacionEntity } from "../evaluacion/evaluacion.entity";
 
 @Entity('proyecto')
 export class ProyectoEntity {
@@ -18,5 +21,15 @@ export class ProyectoEntity {
     fechaInicio:string;
     @Column()
     fechaFin:string;
-    
+    @ManyToOne(() => EstudianteEntity, estudiante => estudiante.proyectos)
+    lider: EstudianteEntity;
+
+    @ManyToOne(()=> ProfesorEntity , profesor => profesor.mentorias)
+    mentor: ProfesorEntity;
+
+    @OneToMany(()=> EvaluacionEntity, evaluacion => evaluacion.proyecto)
+    evaluaciones: EvaluacionEntity[];
+
+
+
 }

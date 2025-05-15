@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ProyectoEntity } from "../proyecto/proyecto.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('estudiante')
 export class EstudianteEntity {
@@ -14,6 +15,9 @@ export class EstudianteEntity {
     programa : string;  
     @Column()   
     promedio : number;
+
+    @OneToMany(()=> ProyectoEntity, proyecto => proyecto.lider)
+    proyectos : ProyectoEntity[];
 
 
 

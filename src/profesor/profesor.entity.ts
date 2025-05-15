@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { EvaluacionEntity } from "src/evaluacion/evaluacion.entity";
+import { ProyectoEntity } from "../proyecto/proyecto.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("profesor")
 export class ProfesorEntity {
@@ -14,6 +16,12 @@ export class ProfesorEntity {
     extension : number;
     @Column()
     esParevaluador : boolean;
+
+    @OneToMany(() => ProyectoEntity, proyecto => proyecto.mentor)
+    mentorias: ProyectoEntity[];
+    
+    @OneToMany(()=> EvaluacionEntity, evaluacion => evaluacion.proyecto)
+    evaluaciones: EvaluacionEntity[];
     
 
 
