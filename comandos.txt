@@ -19,6 +19,14 @@ onetone joincolum
 manytomany jointable
 
 
+POST /estudiantes crear estudiante - CrearEstudianteDTO - EstudianteDTO
+DELETE /estudiantes/:id eliminar estudiante - idDTO - MensajeDTO
+POST /profesores crear profesor - CrearProfesorDTO - ProfesorDTO
+POST /evaluaciones crear evaluación - CrearEvaluacionDTO - EvaluacionDTO
+...
+
+
+
 
 
 📌 Relación unidireccional (solo un lado conoce al otro)
