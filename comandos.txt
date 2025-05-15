@@ -1,0 +1,19 @@
+nest g mo museum crear carpeta por entidad 
+nest g cl museum/museum.entity --no-spec crear entidad  sin archivo de pruebas
+nest g s museum crear servicio
+
+nest g co museum --no-spec crear controlador
+
+
+asociasiones logica 
+nest g mo museum-artwork
+nest g s museum-artwork
+
+
+
+
+nest g cl museum/museum.dto --no-spec dto 
+
+nest g co museum-artwork --no-spec controlador asociasion 
+onetone joincolum
+manytomany jointable
