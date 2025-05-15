@@ -14,10 +14,8 @@ import { ArtworkEntity } from './artwork/artwork.entity';
 import { ExhibitionEntity } from './exhibition/exhibition.entity';
 import { ImageEntity } from './image/image.entity';
 import { MovementEntity } from './movement/movement.entity';
-import { MuseumEntity } from './museum/museum.entity/museum.entity';
+import { MuseumEntity } from './museum/museum.entity';
 import { SponsorEntity } from './sponsor/sponsor.entity';
-import { MuseumArtworkController } from './museum-artwork/museum-artwork.controller';
-import { MuseumArtworkModule } from './museum-artwork/museum-artwork.module';
 
 @Module({
   imports: [MuseumModule, ExhibitionModule, ArtworkModule, ArtistModule, SponsorModule, ImageModule, MovementModule,
@@ -32,9 +30,8 @@ import { MuseumArtworkModule } from './museum-artwork/museum-artwork.module';
      dropSchema: true,
      synchronize: true
    }),
-   MuseumArtworkModule,
  ],
-  controllers: [AppController, MuseumArtworkController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
