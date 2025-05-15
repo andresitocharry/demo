@@ -16,6 +16,12 @@ import { ImageEntity } from './image/image.entity';
 import { MovementEntity } from './movement/movement.entity';
 import { MuseumEntity } from './museum/museum.entity';
 import { SponsorEntity } from './sponsor/sponsor.entity';
+import { UsuarioModule } from './usuario/usuario.module';
+import { ClaseModule } from './clase/clase.module';
+import { BonoModule } from './bono/bono.module';
+import { UsuarioEntity } from './usuario/usuario.entity';
+import { BonoEntity } from './bono/bono.entity';
+import { ClaseEntity } from './clase/clase.entity';
 
 @Module({
   imports: [MuseumModule, ExhibitionModule, ArtworkModule, ArtistModule, SponsorModule, ImageModule, MovementModule,
@@ -26,10 +32,13 @@ import { SponsorEntity } from './sponsor/sponsor.entity';
      username: 'postgres',
      password: 'postgres',
      database: 'museum',
-     entities: [ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity],
+     entities: [ArtistEntity, ArtworkEntity, ExhibitionEntity, ImageEntity, MovementEntity, MuseumEntity, SponsorEntity, UsuarioEntity, BonoEntity, ClaseEntity],
      dropSchema: true,
      synchronize: true
    }),
+   UsuarioModule,
+   ClaseModule,
+   BonoModule,
  ],
   controllers: [AppController],
   providers: [AppService],
