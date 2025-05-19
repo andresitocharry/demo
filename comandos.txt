@@ -19,38 +19,5 @@ onetone joincolum
 manytomany jointable
 
 
-POST /estudiantes crear estudiante - CrearEstudianteDTO - EstudianteDTO
-DELETE /estudiantes/:id eliminar estudiante - idDTO - MensajeDTO
-POST /profesores crear profesor - CrearProfesorDTO - ProfesorDTO
-POST /evaluaciones crear evaluación - CrearEvaluacionDTO - EvaluacionDTO
-...
 
 
-
-
-
-📌 Relación unidireccional (solo un lado conoce al otro)
-Solo defines la relación en un lado, así:
-
-ts
-Copiar
-Editar
-@OneToOne(() => UsuarioEntity)
-@JoinColumn()
-jefe: UsuarioEntity;
-
-
-
-
-📌 Relación bidireccional (ambos lados se conocen)
-Si quieres que también el jefe tenga acceso a su subordinado(s), entonces defines la relación en ambos lados:
-
-ts
-Copiar
-Editar
-@OneToOne(() => UsuarioEntity, { nullable: true })
-@JoinColumn()
-jefe: UsuarioEntity;
-
-@OneToOne(() => UsuarioEntity, usuario => usuario.jefe)
-subordinado: UsuarioEntity;

@@ -14,10 +14,12 @@ import { EstudianteModule } from './estudiante/estudiante.module';
 
 import { ProyectoModule } from './proyecto/proyecto.module';
 import { ProfesorModule } from './profesor/Profesor.module';
+import { EvaluacionModule } from './evaluacion/evaluacion.module';
+import { ControllerController } from './controller/controller.controller';
 
 @Module({
   imports: [
-
+    EvaluacionModule,
     EstudianteModule,
     ProfesorModule,
     ProyectoModule,
@@ -39,7 +41,7 @@ import { ProfesorModule } from './profesor/Profesor.module';
       synchronize: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, ControllerController],
   providers: [AppService],
 })
 export class AppModule {}

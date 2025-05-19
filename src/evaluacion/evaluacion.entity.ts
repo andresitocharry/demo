@@ -1,11 +1,14 @@
-import { ProfesorEntity } from "src/profesor/profesor.entity";
+import { ProfesorEntity } from "../profesor/profesor.entity";
 import { ProyectoEntity } from "../proyecto/proyecto.entity";
-import { Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('evaluacion')
 export class EvaluacionEntity {
     @PrimaryGeneratedColumn()
     id: number;
+
+    @Column()
+    nota: number;
 
     @ManyToOne(() => ProyectoEntity, proyecto => proyecto.evaluaciones)
     proyecto: ProyectoEntity;

@@ -1,4 +1,4 @@
-import { EstudianteEntity } from "src/estudiante/estudiante.entity";
+import { EstudianteEntity } from "../estudiante/estudiante.entity";
 import { ProfesorEntity } from "../profesor/profesor.entity";
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { EvaluacionEntity } from "../evaluacion/evaluacion.entity";
